@@ -1,0 +1,5 @@
+# Redirect default Netlify subdomain to primary domain
+http://koshinto.netlify.com/* http://koshinto.uedasoft.com/:splat 301!
+
+# SPA
+/*    /index.html   200
