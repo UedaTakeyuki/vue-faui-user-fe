@@ -1,6 +1,6 @@
 {
   "name": "vue-faui-user-fe",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A user account frontend with firebase auth ui",
   "author": "Dr Takeyuki UEDA",
   "private": false,
@@ -14,13 +14,6 @@
     "docs:eject": "vuepress eject docs"
   },
   "main": "./dist/vue-faui-user-fe.umd.js",
-  "files": [
-    "dist/*",
-    "src/components/*.vue",
-    "src/views/account/*",
-    "src/views/purchase/*",
-    "src/build-entry.js"
-  ],
   "dependencies": {
     "@stripe/stripe-js": "^1.8.0",
     "@vuepress/shared-utils": "^1.5.2",
