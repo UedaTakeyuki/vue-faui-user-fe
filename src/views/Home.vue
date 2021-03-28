@@ -30,5 +30,9 @@ export default {
     return {
     }
   },
+  mounted(){
+    console.log(PurchaseFront)
+    console.log(AccountFront)
+  }
 }
 </script>

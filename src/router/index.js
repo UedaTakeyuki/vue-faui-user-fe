@@ -2,8 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
-import Account  from '@/views/account/account.route.js'
+import AccountRoutes  from '@/views/account/account.route.js'
 import Purchase from '@/views/purchase/purchase.route.js'
+
+//import AccountFront from '@/views/account/AccountFront.vue'
 
 //import ga from 'vue-ga'
 
@@ -22,7 +24,7 @@ const routes = [
   ...Purchase.routes,
 
   // account
-  ...Account.routes,
+  ...AccountRoutes.routes,
 
 ]
 
