@@ -1,4 +1,4 @@
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 
 export default{
@@ -10,7 +10,7 @@ export default{
       }
     },
     logout_soon: function() {
-      firebase.auth().signOut().then(function() {
+      this.$firebase.auth().signOut().then(function() {
         // Sign-out successful.
         window.location.href = 'index.html';
       }).catch(function(error) {

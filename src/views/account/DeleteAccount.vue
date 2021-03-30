@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 
 export default {
@@ -43,7 +43,7 @@ export default {
       let result = confirm('Are you sure to DELETE this account?');
       if (result){
         /* eslint-disable no-unused-vars */
-        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+        this.$firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
           // Send token to your backend via HTTPS
           // ...
           /*
@@ -53,10 +53,10 @@ export default {
 
           });
           */
-          firebase.auth().currentUser.delete().catch(function(error) {
+          this.$firebase.auth().currentUser.delete().catch(function(error) {
             if (error.code == 'auth/requires-recent-login') {
               // The user's credential is too old. She needs to sign in again.
-              firebase.auth().signOut().then(function() {
+              this.$firebase.auth().signOut().then(function() {
                 // The timeout allows the message to be displayed after the UI has
                 // changed to the signed out state.
                 setTimeout(function() {

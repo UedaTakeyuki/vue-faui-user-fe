@@ -95,7 +95,7 @@
 <script>
 /* eslint no-unused-vars: 0 */
 import DateString from '@/components/DateString'
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 import axios from 'axios'
 // https://github.com/alexei/sprintf.js
@@ -121,7 +121,7 @@ export default {
   },
   methods: {
     getPayments(startingAfter, endingBefore){
-      var user = firebase.auth().currentUser;
+      var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           var url

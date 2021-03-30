@@ -2,7 +2,9 @@
   <v-app>
     <Navbar />
     <div id="nav">
-      <Login/>
+      <Login
+        :firebase="firebase"
+      />
     </div>
 
     <v-content>
@@ -26,6 +28,7 @@
 </template>
 
 <script>
+import firebase from "firebase/app";
 import Navbar from '@/components/Navbar'
 import Login from '@/components/Login.vue'
 
@@ -48,6 +51,7 @@ export default {
   },
 
   data: () => ({
+    firebase: firebase
     //
   }),
   computed: {

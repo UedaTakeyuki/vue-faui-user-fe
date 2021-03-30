@@ -1,4 +1,4 @@
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 
 export default{
@@ -8,7 +8,7 @@ export default{
     }
   },
   created: function(){
-    firebase.auth().onAuthStateChanged(user => {
+    this.$firebase.auth().onAuthStateChanged(user => {
       this.user = user;
       this.email = user.email;
       this.displayName = user.displayName;

@@ -74,7 +74,7 @@ import Keys from '@/components/edit/Keys'
 import Status from '@/components/edit/Status'
 import Sansi from '@/components/edit/Sansi'
 import SafekeepedKey from '@/components/edit/SafekeepedKey'
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 import axios from 'axios'
 // https://github.com/alexei/sprintf.js
@@ -185,7 +185,7 @@ export default {
         return
       }
 
-      var user = firebase.auth().currentUser;
+      var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           const url = sprintf(this.$koshinto + '/v1/UpdateBind/%s/%s', this.bind.Bid, idToken)

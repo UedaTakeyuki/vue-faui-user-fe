@@ -69,7 +69,7 @@
 /* eslint-disable no-console */
 // https://qiita.com/saio-th/items/111f6f5cc62f421cf045
 
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 import QRCode from 'qrcode';
 
@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     logout: function(){
-      firebase.auth().signOut().then(function() {
+      this.$firebase.auth().signOut().then(function() {
         // Sign-out successful.
         window.location.href = 'index.html';
       }).catch(function(error) {

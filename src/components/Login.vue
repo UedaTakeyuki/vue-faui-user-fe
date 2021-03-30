@@ -1,6 +1,8 @@
 <template>
   <div>
-  <EmailVerificationRequest/>
+  <EmailVerificationRequest
+    :firebase="firebase"
+  />
   <section id="firebaseui-auth-container"></section>
   </div>
 </template>
@@ -12,7 +14,7 @@
 //import firebase from "firebase";
 //import firebaseui from "firebaseui";
 import "firebaseui/dist/firebaseui.css";
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 import * as firebaseui from 'firebaseui';
 import EmailVerificationRequest from '@/components/EmailVerificationRequest.vue'
@@ -21,6 +23,7 @@ import "firebase/firestore";
 //import axios from 'axios';
 
 export default {
+  props: ['firebase'],
   components: {
     EmailVerificationRequest
   },
@@ -35,21 +38,22 @@ export default {
     },
   },
   mounted() {
+    console.log("login firebase:", this.firebase)
     let ui = firebaseui.auth.AuthUI.getInstance();
     let uiConfig = {
       signInSuccessUrl: "/",
 //      signInOptions: [firebase.auth.FacebookAuthProvider.PROVIDER_ID]
-      signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
+      signInOptions: [this.firebase.auth.EmailAuthProvider.PROVIDER_ID],
       credentialHelper: firebaseui.auth.CredentialHelper.NONE
     };
-    firebase.auth().onAuthStateChanged((user) => {
+    this.$firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.$isLogin = true;
         this.$displayName = user.displayName
         this.$user_email  = user.email
         this.$user_id     = user.uid
 
-        let db = firebase.firestore();
+        let db = this.$firebase.firestore();
         db.collection("users").doc(user.uid).get().then(docSnapshot =>{
           if (docSnapshot.exists){
             this.$internalUserId = docSnapshot.get("id");
@@ -60,7 +64,7 @@ export default {
         }).catch(err => alert(err))
       } else {
         if (!ui) {
-          ui = new firebaseui.auth.AuthUI(firebase.auth());
+          ui = new firebaseui.auth.AuthUI(this.$firebase.auth());
           ui.start("#firebaseui-auth-container", uiConfig);
         }
       }

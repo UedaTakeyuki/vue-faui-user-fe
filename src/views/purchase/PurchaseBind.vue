@@ -98,7 +98,7 @@
 
 <script>
 /* eslint no-unused-vars: 0 */
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth";
 import axios from 'axios'
 // @ is an alias to /src
@@ -148,7 +148,7 @@ export default {
       });
     },
     purchase(){
-      var user = firebase.auth().currentUser;
+      var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           const url = sprintf(this.$koshinto + '/v1/sessionIDforBind/%s', idToken)
@@ -164,7 +164,7 @@ export default {
       }
     },
     cancel(){
-      var user = firebase.auth().currentUser;
+      var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           const url = sprintf(this.$koshinto + '/v1/customerportal/%s', idToken)

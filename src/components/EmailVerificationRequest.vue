@@ -34,11 +34,28 @@
 <script>
 /* eslint-disable no-console */
 // https://qiita.com/saio-th/items/111f6f5cc62f421cf045
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import "firebase/auth"
 
 export default {
+  props: ['firebase'],
 mounted() {
+
+/*
+const firebaseConfig = {
+  apiKey: process.env.VUE_APP_apiKey,
+  authDomain: process.env.VUE_APP_authDomain,
+  databaseURL: process.env.VUE_APP_databaseURL,
+  projectId: process.env.VUE_APP_projectId,
+  storageBucket: process.env.VUE_APP_storageBucket,
+  messagingSenderId: process.env.VUE_APP_messagingSenderId,
+  appId: process.env.VUE_APP_appId,
+
+};
+//console.log(firebaseConfig)
+firebase.initializeApp(firebaseConfig);
+*/
+
     let actionElement = document.getElementById('actionElement');
     actionElement.style.display = 'none'; // hide
 
@@ -60,10 +77,10 @@ mounted() {
       },*/
 //      handleCodeInApp: true
     };
-//    console.log(actionCodeSettings);
-    firebase.auth().onAuthStateChanged((user) => {
+    this.firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user);
+        console.log("EVR firebase:", this.firebase)
         if (user.emailVerified){
           this.$isEmailVerified = true;
           actionElement.style.display = 'none'; // hide
