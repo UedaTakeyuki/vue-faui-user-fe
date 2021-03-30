@@ -1,8 +1,6 @@
 <template>
-<!--  <v-card
-    v-if="$isLogin && $isEmailVerified"
-  > -->
   <v-card
+    v-if="$isLogin && $isEmailVerified"
   >
     <v-card-title class="grey--text">
       Account

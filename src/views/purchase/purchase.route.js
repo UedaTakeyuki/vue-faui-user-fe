@@ -20,5 +20,6 @@ export default {
       name: 'payments',
       component: () => import(/* webpackChunkName: "about" */ '@/views/purchase/Payments.vue')
     },
-  ]
+  ],
+  menuItem: { icon: 'shop', text: 'Purchase', route: '/purchase'},
 }

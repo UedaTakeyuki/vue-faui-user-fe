@@ -8,7 +8,6 @@ import firebase from 'firebase'
 //import VueGtag from "vue-gtag"
 
 Vue.config.productionTip = false
-
 const firebaseConfig = {
   apiKey: process.env.VUE_APP_apiKey,
   authDomain: process.env.VUE_APP_authDomain,
@@ -17,8 +16,19 @@ const firebaseConfig = {
   storageBucket: process.env.VUE_APP_storageBucket,
   messagingSenderId: process.env.VUE_APP_messagingSenderId,
   appId: process.env.VUE_APP_appId,
-
 };
+console.log(firebaseConfig)
+/*
+var firebaseConfig = {
+  apiKey: "AIzaSyDyI8iMCe8R3rb3TACrab1XwQ_cG1UnObE",
+  authDomain: "vue-faui-user-fe.firebaseapp.com",
+  projectId: "vue-faui-user-fe",
+  storageBucket: "vue-faui-user-fe.appspot.com",
+  messagingSenderId: "1006020446206",
+  appId: "1:1006020446206:web:fb17014018c82777a622af",
+  measurementId: "G-4JR0GPL23F"
+};
+*/
 //console.log(firebaseConfig)
 firebase.initializeApp(firebaseConfig);
 
