@@ -1,20 +1,42 @@
-# koshinto_fe
+# Vue Firebase auth ui user management frontend pack
+Provide following feature to your vue app.
+- Login by firebase auth ui with email, verification required.
+- Account Management (cange name and email address, delete account, etc)
 
-## How this project was scafolded.
-```
-vue create koshinto_fe
-cd koshinto_fe
-vue add router
-vue add vuetify
+## Install
+```yarn add vue-faui-user-fe```
 
-npm install --save firebase
-npm install --save firebaseui
+## How to embed into your app
+
+### 1. initialize **firebase app** and set it to **scope instance property of vue** at ``main.js`` on your vue app
+
+```vue{13}
+import firebase from 'firebase'
+
+const firebaseConfig = {
+  apiKey: process.env.VUE_APP_apiKey,
+  authDomain: process.env.VUE_APP_authDomain,
+  databaseURL: process.env.VUE_APP_databaseURL,
+  projectId: process.env.VUE_APP_projectId,
+  storageBucket: process.env.VUE_APP_storageBucket,
+  messagingSenderId: process.env.VUE_APP_messagingSenderId,
+  appId: process.env.VUE_APP_appId,
+};
+
+Vue.prototype.$firebase = firebase.initializeApp(firebaseConfig);
+
+new Vue({
+  router,
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
 ```
 
-## Project setup
-```
-npm install
-```
+The $firebase, which has been initialized, is intended to be used by the components.
+
+Note that initialization of the firebase app can be available only **one time**, second time initialization must be caused an error. So, initialized firebase app shoud be pathed to componets like this manner.
+
+Please refer a real implementation on a [sample project](https://github.com/UedaTakeyuki/vue-faui-user-fe-sample/blob/main/src/main.js#L33).
 
 ### Compiles and hot-reloads for development
 ```
