@@ -42,7 +42,9 @@ export default {
     let ui = firebaseui.auth.AuthUI.getInstance();
     let uiConfig = {
       signInSuccessUrl: "/",
-      signInOptions: [firebase.auth.FacebookAuthProvider.PROVIDER_ID],
+      signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID, 
+                      /* firebase.auth.FacebookAuthProvider.PROVIDER_ID */
+                     ],
 //      signInOptions: [this.firebase.auth.EmailAuthProvider.PROVIDER_ID],
       credentialHelper: firebaseui.auth.CredentialHelper.NONE
     };

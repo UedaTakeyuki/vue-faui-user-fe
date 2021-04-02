@@ -6,9 +6,11 @@ Provide following feature to your vue app.
 ## Install
 ```yarn add vue-faui-user-fe```
 
-## How to embed into your app
+## How to use it in your app
 
-### 1. initialize **firebase app** and set it to **scope instance property of vue** at ``main.js`` on your vue app
+### 1. initialize **firebase app** and set it to scope instance property **Vue.prototype.$firebase** at ``main.js`` on your vue app
+
+Set the firebase app object initialized at the very first of your to **Vue.prototype.$firebase** for enable to be used by the inside of this package. For example:
 
 ```vue{13}
 import firebase from 'firebase'
@@ -38,20 +40,21 @@ Note that initialization of the firebase app can be available only **one time**,
 
 Please refer a real implementation on a [sample project](https://github.com/UedaTakeyuki/vue-faui-user-fe-sample/blob/main/src/main.js#L33).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 2. Copy **Login.vue** and **EmailVerificationRequest.vue* in your app
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Due to technically unresolved issues, we can't get success to include the following vue components which are required for login authentication into our package.
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Login.vue
+- EmailVerificationRequest.vue
+
+For now, copy them from the following repositories to your application.
+
+- from: 
+
+
+By the way, the detail of the unresouved technical issue mentioned above is, the value ``firebase.auth.EmailAuthProvider`` of **$firebase** mentioned last section get **null** inside our package despite other values seem no problem. Any ideas on this issue are welcome, thank you for your help! 
+
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
