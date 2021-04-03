@@ -5,11 +5,11 @@ Provide following feature to your vue app.
 
 as follows:
 
-<img src="img/ss.2021-04-03 20.23.10.png" width="30%" />
-<img src="img/ss.2021-04-03 20.20.29.png" width="30%" />
-<img src="img/ss.2021-04-03 20.20.52.png" width="30%" />
-<img src="img/ss.2021-04-03 20.21.43.png" width="30%" />
-<img src="img/ss.2021-04-03 20.22.06.png" width="30%" />
+<img src="img/ss.2021-04-03 20.23.10.png" width="70%" />
+<img src="img/ss.2021-04-03 20.20.29.png" width="70%" />
+<img src="img/ss.2021-04-03 20.20.52.png" width="70%" />
+<img src="img/ss.2021-04-03 20.21.43.png" width="70%" />
+<img src="img/ss.2021-04-03 20.22.06.png" width="70%" />
 
 ## Install
 
