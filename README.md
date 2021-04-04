@@ -24,8 +24,11 @@ refer [wiki](https://github.com/UedaTakeyuki/vue-faui-user-fe/wiki/How-to-setup)
 Demo site is available at [here](https://vue-faui-user-fe-sample.uedasoft.com/).
 You can try to **Create account**, **Login**, **Account management**, **Logout**, **Delete account** on this site.
 
+## Q&A
+Github [issues](https://github.com/UedaTakeyuki/vue-faui-user-fe/issues) are available. Any questions, suggestions, reports are welcome!
+
 ## Author
 [Dr. Takeyuki UEDA](https://atelierueda.uedasoft.com/)
 
 ## History
-- 1.0.0 2021.04.03 first version.
+- 1.0.0 2021.04.04 first version.
