@@ -61,9 +61,9 @@ let globalData = new Vue({
     $internalUserId: "",
     $stripe: process.env.VUE_APP_stripeEnv == "live" ? process.env.VUE_APP_stripeapiLiveKey : process.env.VUE_APP_stripeapiTestKey,
     $stripeEnv: process.env.VUE_APP_stripeEnv,
-    $koshinto: process.env.VUE_APP_koshintoProtocol + "://" 
-               + process.env.VUE_APP_koshintoHost +"."
-               + process.env.VUE_APP_koshintoDomain,
+    $server: process.env.VUE_APP_serverProtocol + "://" 
+             + process.env.VUE_APP_serverHost +"."
+             + process.env.VUE_APP_serverDomain,
   }
 });
 Vue.mixin({
@@ -102,8 +102,8 @@ Vue.mixin({
     $stripeEnv: {
       get: function () { return globalData.$data.$stripeEnv },
     },
-    $koshinto: {
-      get: function () { return globalData.$data.$koshinto },
+    $server: {
+      get: function () { return globalData.$data.$server },
     },
 
   }

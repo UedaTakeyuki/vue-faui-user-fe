@@ -188,7 +188,7 @@ export default {
       var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
-          const url = sprintf(this.$koshinto + '/v1/UpdateBind/%s/%s', this.bind.Bid, idToken)
+          const url = sprintf(this.$server + '/v1/UpdateBind/%s/%s', this.bind.Bid, idToken)
           console.log("url",url)
           console.log("updates",updates)
           axios

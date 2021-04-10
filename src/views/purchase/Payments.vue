@@ -126,7 +126,7 @@ export default {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
           var url
           var params = new URLSearchParams();
-          url = sprintf(this.$koshinto + '/v1/paymenthistorys/%s/%s', this.limit, idToken)
+          url = sprintf(this.$server + '/v1/paymenthistorys/%s/%s', this.limit, idToken)
           if (startingAfter != ""){
             params.append('startingAfter', startingAfter);
           }

@@ -130,11 +130,11 @@ export default {
   },
   methods: {
     purchase_1_bind(){
-      const url = sprintf(this.$koshinto + '/cntl/buy/%s/%s', "price_1HCK0qG8LX1Yc059ZXzuN5gO", this.quantityOf_1_Bind)
+      const url = sprintf(this.$server + '/cntl/buy/%s/%s', "price_1HCK0qG8LX1Yc059ZXzuN5gO", this.quantityOf_1_Bind)
       this.checkout(url)
     },
     purchase_10_bind(){
-      const url = sprintf(this.$koshinto + '/cntl/buy/%s/%s', "price_1HDikyG8LX1Yc059kjBrDF6Y", this.quantityOf_10_Bind)
+      const url = sprintf(this.$server + '/cntl/buy/%s/%s', "price_1HDikyG8LX1Yc059kjBrDF6Y", this.quantityOf_10_Bind)
       this.checkout(url)
     },
     checkout(url){
@@ -151,7 +151,7 @@ export default {
       var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
-          const url = sprintf(this.$koshinto + '/v1/sessionIDforBind/%s', idToken)
+          const url = sprintf(this.$server + '/v1/sessionIDforBind/%s', idToken)
           axios
           .post(url,this.lineitems)
           .then(response => {
@@ -167,7 +167,7 @@ export default {
       var user = this.$firebase.auth().currentUser;
       if (user) {
         user.getIdToken(/* forceRefresh */ true).then((idToken) => {
-          const url = sprintf(this.$koshinto + '/v1/customerportal/%s', idToken)
+          const url = sprintf(this.$server + '/v1/customerportal/%s', idToken)
           axios
           .get(url)
           .then(response => {

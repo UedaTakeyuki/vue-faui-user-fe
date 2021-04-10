@@ -55,6 +55,9 @@ export default {
         $internalUserId: "",
 //        $stripe: process.env.VUE_APP_stripeEnv == "live" ? process.env.VUE_APP_stripeapiLiveKey : process.env.VUE_APP_stripeapiTestKey,
 //        $stripeEnv: process.env.VUE_APP_stripeEnv,
+        $server: process.env.VUE_APP_serverProtocol + "://" 
+                 + process.env.VUE_APP_serverHost +"."
+                 + process.env.VUE_APP_serverDomain,
 //        $koshinto: process.env.VUE_APP_koshintoProtocol + "://" 
 //                   + process.env.VUE_APP_koshintoHost +"."
 //                   + process.env.VUE_APP_koshintoDomain,
@@ -96,6 +99,9 @@ export default {
 //        $stripeEnv: {
 //          get: function () { return globalData.$data.$stripeEnv },
 //        },
+        $server: {
+          get: function () { return globalData.$data.$server },
+        },
 //        $koshinto: {
 //          get: function () { return globalData.$data.$koshinto },
 //        },
