@@ -196,7 +196,8 @@ export default {
   },
   watch: {
     // watch $internalUseriD and call getBinds in case owner id is not set at mounted
-    $internalUserId: function(newinternalUserId, oldinternalUserId) {
+//    $internalUserId: function(newinternalUserId, oldinternalUserId) {
+    $isLogin: function(newinternalUserId, oldinternalUserId) {
       console.log("watch", this)
       this.getPayments("","")
     },

@@ -52,7 +52,7 @@ export default {
 //        $lang: get_browser_lang(),
         $isLogin: false,
         $isEmailVerified: false,
-        $internalUserId: "",
+//        $internalUserId: "",
 //        $stripe: process.env.VUE_APP_stripeEnv == "live" ? process.env.VUE_APP_stripeapiLiveKey : process.env.VUE_APP_stripeapiTestKey,
 //        $stripeEnv: process.env.VUE_APP_stripeEnv,
         $server: process.env.VUE_APP_serverProtocol + "://" 
@@ -77,10 +77,12 @@ export default {
           get: function () { return globalData.$data.$isEmailVerified },
           set: function (newIsEmailVerified) { globalData.$data.$isEmailVerified = newIsEmailVerified; }
         },
+/*
         $internalUserId: {
           get: function () { return globalData.$data.$internalUserId },
           set: function (newInternalUserId) { globalData.$data.$internalUserId = newInternalUserId; }
         },
+*/
         $displayName: {
           get: function () { return globalData.$data.$displayName },
           set: function (newDisplayName) { globalData.$data.$displayName = newDisplayName; }
