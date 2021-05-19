@@ -43,28 +43,19 @@ export default {
       let result = confirm('Are you sure to DELETE this account?');
       if (result){
         /* eslint-disable no-unused-vars */
-        this.$firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-          // Send token to your backend via HTTPS
-          // ...
-          /*
-          var param = {idToken: idToken};
-          $.post("postDeleteUser.php", param,
-            function(data){
-
-          });
-          */
-          this.$firebase.auth().currentUser.delete().catch(function(error) {
-            if (error.code == 'auth/requires-recent-login') {
-              // The user's credential is too old. She needs to sign in again.
-              this.$firebase.auth().signOut().then(function() {
-                // The timeout allows the message to be displayed after the UI has
-                // changed to the signed out state.
-                setTimeout(function() {
-                  alert('Please sign in again to delete your account.');
-                }, 1);
-              });
-            }
-          });
+        console.log("this", this)
+        // for $parent, refer https://johobase.com/vue-js-parent-refs-root/
+        this.$parent.$firebase.auth().currentUser.delete().catch((error) => {
+          if (error.code == 'auth/requires-recent-login') {
+            // The user's credential is too old. She needs to sign in again.
+            this.$parent.$firebase.auth().signOut().then(function() {
+              // The timeout allows the message to be displayed after the UI has
+              // changed to the signed out state.
+              setTimeout(function() {
+                alert('Please sign in again to delete your account.');
+              }, 1);
+            });
+          }
         });
       }
     },

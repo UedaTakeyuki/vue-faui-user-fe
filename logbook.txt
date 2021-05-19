@@ -3,3 +3,5 @@
 2021.03.28 export AccountRoutes
 
 2021.04.10 payment history
+
+2021.04.19 fix Delete Account view
