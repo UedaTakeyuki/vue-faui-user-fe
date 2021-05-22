@@ -4,4 +4,4 @@
 
 2021.04.10 payment history
 
-2021.04.19 fix Delete Account view
+2021.05.19 fix Delete Account view
