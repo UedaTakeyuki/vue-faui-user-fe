@@ -1,9 +1,13 @@
 {
   "name": "vue-faui-user-fe",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "A user account frontend with firebase auth ui",
   "author": "Dr Takeyuki UEDA",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UedaTakeyuki/vue-faui-user-fe.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
