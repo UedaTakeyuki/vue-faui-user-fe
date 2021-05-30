@@ -18,8 +18,8 @@
 
 <script>
 /* eslint-disable no-console */
-import firebase from "firebase/app";
-import "firebase/auth"
+//import firebase from "firebase/app";
+//import "firebase/auth"
 
 export default {
 //  props: ['firebase'],
@@ -61,7 +61,7 @@ firebase.initializeApp(firebaseConfig);
       },*/
 //      handleCodeInApp: true
     };
-    firebase.auth().onAuthStateChanged((user) => {
+    this.$parent.$firebase.auth().onAuthStateChanged((user) => {
 //    this.firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user);

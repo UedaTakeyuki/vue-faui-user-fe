@@ -1,6 +1,6 @@
 <template>
   <div>
-<!--  <EmailVerificationRequest/> -->
+  <EmailVerificationRequest/>
   <section id="firebaseui-auth-container"></section>
   </div>
 </template>
@@ -12,10 +12,10 @@
 //import firebaseui from "firebaseui";
 import "firebaseui/dist/firebaseui.css";
 //import firebase from "firebase/app";
-import firebase from "firebase";
+//import firebase from "firebase";
 //import "firebase/auth";
 import * as firebaseui from 'firebaseui';
-//import EmailVerificationRequest from '@/components/EmailVerificationRequest.vue'
+import EmailVerificationRequest from '@/components/EmailVerificationRequest2.vue'
 
 //import "firebase/firestore";
 //import axios from 'axios';
@@ -23,7 +23,7 @@ import * as firebaseui from 'firebaseui';
 export default {
 //  props: ['firebase'],
   components: {
-//    EmailVerificationRequest
+    EmailVerificationRequest
   },
   data: function () {
     return {
@@ -36,18 +36,16 @@ export default {
     },
   },
   mounted() {
-    console.log("login firebase:", this.firebase)
     let ui = firebaseui.auth.AuthUI.getInstance();
     let uiConfig = {
       signInSuccessUrl: "/",
-      signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID, 
+      signInOptions: [this.$parent.$firebase.auth.EmailAuthProvider.PROVIDER_ID, 
                       /* firebase.auth.FacebookAuthProvider.PROVIDER_ID */
                      ],
 //      signInOptions: [this.firebase.auth.EmailAuthProvider.PROVIDER_ID],
       credentialHelper: firebaseui.auth.CredentialHelper.NONE
     };
-    firebase.auth().onAuthStateChanged((user) => {
-//    this.$firebase.auth().onAuthStateChanged((user) => {
+    this.$parent.$firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // set user globals
         this.$isLogin = true;
@@ -56,21 +54,10 @@ export default {
         this.$user_id     = user.uid
 
         // set $internalUserId
-/*
-        let db = $firebase.firestore();
-//        let db = this.$firebase.firestore();
-        db.collection("users").doc(user.uid).get().then(docSnapshot =>{
-          if (docSnapshot.exists){
-            this.$internalUserId = docSnapshot.get("id");
-            console.log(this)
-            console.log(docSnapshot.get("id"))
-            console.log(this.$internalUserId)
-          }
-        }).catch(err => alert(err))
-*/
+
       } else {
         if (!ui) {
-          ui = new firebaseui.auth.AuthUI(firebase.auth());
+          ui = new firebaseui.auth.AuthUI(this.$parent.$firebase.auth());
           ui.start("#firebaseui-auth-container", uiConfig);
         }
       }
