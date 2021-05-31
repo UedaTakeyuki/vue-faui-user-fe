@@ -1,6 +1,6 @@
 {
   "name": "vue-faui-user-fe",
-  "version": "1.0.44",
+  "version": "1.0.45",
   "description": "A user account frontend with firebase auth ui",
   "author": "Dr Takeyuki UEDA",
   "private": false,
@@ -34,8 +34,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "core-js": "^3.6.4",
     "fernet": "^0.3.1",
-    "firebase": "^7.15.5",
-    "firebaseui": "^4.4.0",
+    "firebaseui": "^4.8.0",
     "hashids": "^2.2.2",
     "markdown-it-footnote": "^3.0.2",
     "mermaid": "^8.4.8",
