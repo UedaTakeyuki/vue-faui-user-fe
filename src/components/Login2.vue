@@ -2,7 +2,6 @@
   <div>
   <EmailVerificationRequest/>
   <section id="firebaseui-auth-container"></section>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
   </div>
 </template>
 
@@ -11,7 +10,7 @@
 
 //import firebase from "firebase";
 //import firebaseui from "firebaseui";
-import "firebaseui/dist/firebaseui.css";
+//import "firebaseui/dist/firebaseui.css";
 //import firebase from "firebase/app";
 //import firebase from "firebase";
 //import "firebase/auth";
@@ -35,6 +34,17 @@ export default {
     path_to_types_with_id: function(id){
       return "/types/" + id;
     },
+  },
+  computed: {
+    userInfos: function(){
+      return {
+        'isLogin': this.$isLogin,
+        'isEmailVerified': this.$isEmailVerified,
+        'displayName': this.$displayName,
+        'user_email': this.$user_email,
+        'user_id': this.$user_id,
+      }
+    }
   },
   mounted() {
     let ui = this.$parent.$firebaseui.auth.AuthUI.getInstance();
@@ -66,3 +76,8 @@ export default {
   },
 }
 </script>
+
+<style>
+/* https://medium.com/@renatello/load-external-css-file-into-vue-js-component-e61673753a2b */
+@import 'https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css';
+</style>

@@ -13,7 +13,7 @@
 
 //import firebase from "firebase";
 //import firebaseui from "firebaseui";
-import "firebaseui/dist/firebaseui.css";
+//import "firebaseui/dist/firebaseui.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 import * as firebaseui from 'firebaseui';

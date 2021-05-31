@@ -33,3 +33,4 @@ Github [issues](https://github.com/UedaTakeyuki/vue-faui-user-fe/issues) are ava
 ## History
 - 1.0.0  2021.04.04 first version.
 - 1.0.17 2021.05.22 fix: "Delete account" now works well. 
+- 1.1.0  2021.05.31 Login component support
