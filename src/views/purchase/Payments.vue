@@ -96,7 +96,7 @@
 /* eslint no-unused-vars: 0 */
 import DateString from '@/components/DateString'
 //import firebase from "firebase/app";
-import "firebase/auth";
+//import "firebase/auth";
 import axios from 'axios'
 // https://github.com/alexei/sprintf.js
 var sprintf = require('sprintf-js').sprintf,

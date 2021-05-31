@@ -7,3 +7,4 @@
 2021.05.19 fix Delete Account view
 
 2021.05.30 Login2
+2021.05.31 Login2 and EmailVerificationRequest2 succeeded

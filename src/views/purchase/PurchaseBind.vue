@@ -99,7 +99,7 @@
 <script>
 /* eslint no-unused-vars: 0 */
 //import firebase from "firebase/app";
-import "firebase/auth";
+//import "firebase/auth";
 import axios from 'axios'
 // @ is an alias to /src
 import {loadStripe} from '@stripe/stripe-js';

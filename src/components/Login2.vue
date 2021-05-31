@@ -2,6 +2,7 @@
   <div>
   <EmailVerificationRequest/>
   <section id="firebaseui-auth-container"></section>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
   </div>
 </template>
 
@@ -14,7 +15,7 @@ import "firebaseui/dist/firebaseui.css";
 //import firebase from "firebase/app";
 //import firebase from "firebase";
 //import "firebase/auth";
-import * as firebaseui from 'firebaseui';
+//import * as firebaseui from 'firebaseui';
 import EmailVerificationRequest from '@/components/EmailVerificationRequest2.vue'
 
 //import "firebase/firestore";
@@ -36,14 +37,14 @@ export default {
     },
   },
   mounted() {
-    let ui = firebaseui.auth.AuthUI.getInstance();
+    let ui = this.$parent.$firebaseui.auth.AuthUI.getInstance();
     let uiConfig = {
       signInSuccessUrl: "/",
       signInOptions: [this.$parent.$firebase.auth.EmailAuthProvider.PROVIDER_ID, 
                       /* firebase.auth.FacebookAuthProvider.PROVIDER_ID */
                      ],
 //      signInOptions: [this.firebase.auth.EmailAuthProvider.PROVIDER_ID],
-      credentialHelper: firebaseui.auth.CredentialHelper.NONE
+      credentialHelper: this.$parent.$firebaseui.auth.CredentialHelper.NONE
     };
     this.$parent.$firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -57,7 +58,7 @@ export default {
 
       } else {
         if (!ui) {
-          ui = new firebaseui.auth.AuthUI(this.$parent.$firebase.auth());
+          ui = new this.$parent.$firebaseui.auth.AuthUI(this.$parent.$firebase.auth());
           ui.start("#firebaseui-auth-container", uiConfig);
         }
       }
