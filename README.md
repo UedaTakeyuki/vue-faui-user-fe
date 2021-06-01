@@ -2,7 +2,7 @@
 Provide following feature to your vue app.
 - Sign Up / Sign In by firebase auth ui with email with verification request(original of this package).
 - Account Management (cange name and email address, delete account, etc).
-- Attach to [vuetify-nav](https://github.com/UedaTakeyuki/vuetify-nav).
+- Attach to [vuetify-nav](https://www.npmjs.com/package/vuetify-nav).
 
 as follows:
 
@@ -12,7 +12,7 @@ as follows:
 ### Account Management
   <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.2021-04-03 20.21.04.png" width="30%"/>  <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.ss.2021-04-03 20.21.04.png" width="30%"/>  <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.2021-04-03 20.21.14.png" width="30%"/>  <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.2021-04-03 20.21.31.png" width="30%"/>  <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.2021-04-03 20.21.43.png" width="30%"/>  <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.2021-04-03 20.21.53.png" width="30%"/>  <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.2021-04-03 20.22.06.png" width="30%"/>  
   
-### Attach to [vuetify-nav](https://github.com/UedaTakeyuki/vuetify-nav).
+### Attach to [vuetify-nav](https://www.npmjs.com/package/vuetify-nav).
 <img src="https://github.com/UedaTakeyuki/vue-faui-user-fe/blob/main/img/ss.2021-04-03 20.20.52.png" width="30%"/>
 
 ## Install
