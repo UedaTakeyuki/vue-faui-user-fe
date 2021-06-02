@@ -1,6 +1,6 @@
 {
   "name": "vue-faui-user-fe",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A user account frontend with firebase auth ui",
   "author": "Dr Takeyuki UEDA",
   "private": false,
