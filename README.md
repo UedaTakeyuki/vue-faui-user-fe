@@ -44,4 +44,4 @@ Github [issues](https://github.com/UedaTakeyuki/vue-faui-user-fe/issues) are ava
 - 1.0.0  2021.04.04 first version.
 - 1.0.17 2021.05.22 fix: "Delete account" now works well. 
 - 1.1.0  2021.05.31 Login component support
-- 1.1.0  2021.06.27 This library is deprecated due to huge package size, successor is [vue-faui-user-fe2](https://www.npmjs.com/package/vue-faui-user-fe2) now on.
+- 1.1.10  2021.06.27 This library is deprecated due to huge package size, successor is [vue-faui-user-fe2](https://www.npmjs.com/package/vue-faui-user-fe2) now on.
